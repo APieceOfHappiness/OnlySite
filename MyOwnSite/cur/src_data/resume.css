@@ -1,0 +1,12 @@
+
+.centered_window {
+    box-shadow: 5px -3px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: #98def5;
+    width: 60%;
+    height: 50%;
+    border: 7px solid #98def5;
+    border-radius: 15px;
+    word-break:break-all;
+    /*Нужно подумать, можно ли сделать это лучшим образом*/
+    margin: 7% auto;
+}

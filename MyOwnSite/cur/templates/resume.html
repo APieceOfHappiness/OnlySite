@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{ url_for('static', filename='/main_page.css', _external=True) }}" rel="stylesheet" >
+<!--    <link rel="stylesheet" href="/resume.css">-->
+</head>
+<body>
+  <article class="wider_window" align="center">
+      <h2> ___Resume___ </h2>
+      <p>
+        <strong> Login: </strong>
+        <ins> {{login}} </ins>
+      </p>
+      <p>
+        <strong> Birthdate: </strong>
+        <ins> {{date}} </ins>
+      </p>
+      <p>
+        <strong> Profile: </strong>
+        <ins> {{profile}} </ins>
+      </p>
+      <p>
+        <strong> Am I an honest person?: </strong>
+        {% if truth %}
+            <ins> Yes </ins>
+        {% else %}
+            <ins> No, I'm a brazen liar </ins>
+        {% endif %}
+      </p>
+      <p>
+          <strong> My favourite drink: </strong>
+          {% if coffee and not_coffee %}
+            <ins> I love everything </ins>
+          {% elif coffee %}
+            <ins> I love coffee </ins>
+          {% elif not_coffee %}
+            <ins> I love all except coffee </ins>
+          {% else %}
+            <ins> I hate people </ins>
+          {% endif%}
+      </p>
+      <p>
+          <strong> More about me: </strong>
+          <article class="additional_info">
+            {{additional_info}}
+          </article>
+      </p>
+        <artice>
+            <artice>
+                <form action="/user/{{login}}/resume" method="POST">
+                    <input class="button" name="show_resume" type="submit" value="download a pdf">
+                </form>
+            </artice>
+            <artice align="left">
+                <form action="/user/{{login}}" >
+                    <input class="back_button" type="submit" value="<-#">
+                </form>
+            </artice>
+        </artice>
+  </article>
+
+</body>
+</html>

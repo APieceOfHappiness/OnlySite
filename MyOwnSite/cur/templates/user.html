@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/main_page.css" rel="stylesheet">
+</head>
+<body>
+    <article class="wider_window" align="center">
+        <h2>Please, enter this <br>(badly designed) form <br>[BUT I STILL LOVE IT]</h2>
+        <form method="POST">
+            <p>
+                <label for="sex">Sex</label>
+                <input class="words_input" type="text" name="sex" placeholder="undefined" id="sex" value={{sex}}>
+            </p>
+            <p>
+                <label for="date">Birthdate</label>
+                <input class="words_input" type="date" name="date" id="date" value={{date}}>
+            </p>
+            <p>
+                <label for="profile">Profile</label>
+                <input class="words_input" type="text" name="profile" placeholder="profile" id="profile" value={{profile}}>
+            </p>
+            <p>
+                {% if truth %}
+                    <label for="truth1">Do you like Timur?(we need more statistic)</label>
+                    <input type="checkbox" name="truth" id="truth1" checked>
+                {% else %}
+                    <label for="truth2">Do you like Timur?(we need more statistic)</label>
+                    <input type="checkbox" name="truth" id="truth2">
+                {% endif %}
+            </p>
+            <fieldset>
+                <legend>Choose your favorite drink(If you are in superposition, you may choose both variants):</legend>
+                <p>
+                    {% if coffee %}
+                        <label for="coffee1">Coffee</label>
+                        <input type="checkbox" id="coffee1" name="coffee" checked>
+                    {% else %}
+                        <label for="coffee2">Coffee</label>
+                        <input type="checkbox" id="coffee2" name="coffee">
+                    {% endif %}
+                </p>
+                <p>
+                    {% if not_coffee %}
+                        <label for="not_coffee1">Not coffee</label>
+                        <input type="checkbox" id="not_coffee1" name="not_coffee" checked>
+                    {% else %}
+                        <label for="not_coffee2">Not coffee</label>
+                        <input type="checkbox" id="not_coffee2" name="not_coffee">
+                    {% endif %}
+                </p>
+            </fieldset>
+            <textarea class="words_input" name="additional_info" id="additional_info" cols="33" rows="5">{{additional_info}}</textarea>
+            <p>
+                <input class="button" type="submit" value="save">
+            </p>
+        </form>
+        <article>
+            <article>
+                <form action="/user/{{login}}/resume">
+                    <input style="text-align: center" class="button" name="show_resume" type="submit" value=" show resume">
+                </form>
+            </article>
+            <article align="left">
+                <form action="/login"  align="left">
+                    <input class="back_button" type="submit" value="<-#">
+                </form>
+            </article>
+        </article>
+    </article>
+</body>
+</html>

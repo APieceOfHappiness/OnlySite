@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/main_page.css" rel="stylesheet">
+</head>
+<body>
+  <article class="main_window" align="center">
+    <h2> Sign In </h2>
+    <form action="" method="POST">
+        <p>
+            <label for="username"></label>
+            <input class="words_input" type="text" placeholder="login" name="username">
+        </p>
+        <p>
+            <label for="password"></label>
+            <input class="words_input" type="password" placeholder="password" name="password">
+        </p>
+        <p>
+            <input class="button" type="submit">
+        </p>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </form>
+    <form action="/" align="left">
+        <input class="back_button" type="submit" value="<-#">
+    </form>
+  </article>
+</body>
+</html>

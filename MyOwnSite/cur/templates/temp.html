@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <article align="center">
+      <h1> ___Resume___ </h1>
+      <p>
+        <strong> Login: </strong>
+        <ins> {{login}} </ins>
+      </p>
+      <p>
+        <strong> Birthdate: </strong>
+        <ins> {{date}} </ins>
+      </p>
+      <p>
+        <strong> Profile: </strong>
+        <ins> {{profile}} </ins>
+      </p>
+      <p>
+        <strong> Am I an honest person?: </strong>
+        {% if truth %}
+            <ins> Yes </ins>
+        {% else %}
+            <ins> No, I'm a brazen liar </ins>
+        {% endif %}
+      </p>
+      <p>
+          <strong> My favourite drink: </strong>
+          {% if coffee and not_coffee %}
+            <ins> I love everything </ins>
+          {% elif coffee %}
+            <ins> I love coffee </ins>
+          {% elif not_coffee %}
+            <ins> I love all except coffee </ins>
+          {% else %}
+            <ins> I hate people </ins>
+          {% endif%}
+      </p>
+      <p>
+          <strong> More about me: </strong>
+          <article>
+            {{additional_info}}
+          </article>
+      </p>
+  </article>
+        <artice>
+            <artice style="float: left;">
+                <form action="/user/{{login}}" >
+                    <input type="submit" value="I wanna back">
+                </form>
+            </artice>
+            <artice style="float: right;">
+                <form action="/user/{{login}}/resume" method="POST">
+                    <input name="show_resume" type="submit" value="download a pdf">
+                </form>
+            </artice>
+        </artice>
+</body>
+</html>
